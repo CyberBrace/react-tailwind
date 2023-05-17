@@ -1,38 +1,175 @@
-.App {
-  text-align: center;
+/* Custom Vertical Line & Horizontal line, give vl some height and vr some width */
+.vl {
+  border-left: 6px solid green;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.vr {
+  border-top: 6px solid green;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.w-50 {
+  width: 15rem;
+}
+
+.htk {
+  height: 380px;
+}
+
+/* Style the active class, and buttons on mouse-over */
+.active {
+  background-color: #fff;
+}
+
+.navdiv li {
+  margin-left: -15px;
+}
+
+@media (min-width: 768px) {
+  .gooda {
+    margin-left: -200px;
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+@media (max-width: 767px) {
+  .navwidth {
+    width: 25rem;
+  }
+}
+
+.read-more-state {
+  display: none;
+}
+
+.read-more-target {
+  opacity: 0;
+  max-height: 0;
+  font-size: 0;
+  transition: 0.25s ease;
+}
+
+.read-more-state:checked ~ .read-more-wrap .read-more-target {
+  opacity: 1;
+  font-size: inherit;
+  max-height: 999em;
+}
+
+.read-more-state ~ p > label.read-more-trigger:before {
+  content: "Show more";
+}
+
+.read-more-state:checked ~ p > label.read-more-trigger:before {
+  content: "Show less";
+}
+
+.read-more-trigger {
+  cursor: pointer;
+  display: inline-block;
+  /* padding: 0 .5em;
+  color: #666;
+  font-size: .9em;
+  line-height: 2;
+  border: 1px solid #ddd;
+  border-radius: .25em; */
+}
+
+/* Countdown */
+
+.expired-notice {
+  text-align: center;
+  padding: 2rem;
+  border: 1px solid #ebebeb;
+  border-radius: 0.25rem;
+  margin: 0.5rem;
+}
+
+.expired-notice > span {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: red;
+}
+
+.expired-notice > p {
+  font-size: 1.5rem;
+}
+
+.show-counter {
+  padding: 0.5rem;
+}
+
+.show-counter .countdown-link {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  font-weight: 700;
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+  padding: 0.5rem;
+  border: 1px solid #ebebeb;
+  border-radius: 0.25rem;
+  text-decoration: none;
+  color: #000;
+}
+
+.show-counter .countdown {
+  line-height: 1.25rem;
+  padding: 0 0.75rem 0 0.75rem;
+  align-items: center;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.show-counter .countdown.danger {
+  color: #ff0000;
 }
 
-@keyframes App-logo-spin {
+.show-counter .countdown > p {
+  margin: 0;
+}
+
+.show-counter .countdown > span {
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  line-height: 1rem;
+}
+
+/* countdown end */
+
+.load {
+  background: transparent;
+}
+
+.smt-spinner-circle {
+  width: 50px;
+  height: 50px;
+  position: relative;
+  margin: 20px;
+  border-radius: 50%;
+}
+
+.smt-spinner {
+  height: 100%;
+  width: 100%;
+  border-radius: 50%;
+  border-right: 2px solid rgba(255, 255, 255, 0.6);
+  border-top: 2px solid blue;
+  border-left: 2px solid blue;
+  border-bottom: 2px solid blue;
+  animation: rotate--spinner 1.6s infinite;
+}
+
+@keyframes rotate--spinner {
   from {
-    transform: rotate(0deg);
+    transform: rotate(0);
   }
+
   to {
     transform: rotate(360deg);
   }
+}
+
+.curve {
+  border-bottom-left-radius: 40%;
+  border-bottom-right-radius: 40%;
+  /* border-radius: 50%; */
 }
